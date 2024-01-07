@@ -1,0 +1,12 @@
+#navbar{
+    background-color: rgb(136, 247, 221);
+}
+
+#navbarLink:hover{
+    color: palevioletred
+    /* color: #be1fe0; */
+}
+
+#myName{
+    color: black;
+}

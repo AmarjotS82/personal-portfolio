@@ -1,0 +1,24 @@
+.section{
+        padding-left: 12rem;
+        overflow-x: hidden;
+           background-color: rgb(17, 5, 81); 
+}
+
+.btn{
+        color: black;
+}
+
+.btn:hover{
+        background-color: white;
+        color: black;
+}
+
+#ghLogo{
+        width: 25%;
+        height: 25%; 
+   
+}
+
+#title{
+        color: #fefcff;
+}

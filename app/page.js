@@ -1,95 +1,43 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import 'bootstrap/dist/css/bootstrap.css';
+import Navbar from "./Navbar.js";
+import Section from './Section.js';
+import ContactForm from './ContactForm.js';
 
-export default function Home() {
+export default function HomePage() {
+  const aboutInfo = "I am currently in my last term in my computer systems technology diploma."
+  const pantryPalDesc = "Mobile/Web application - to create and save recipes using the ChatGPT API.\n Users make an account and are able to get recipes based on a list of ingredients they give. There are also other features like saving reipes, editing their account, calorie tracker, shopping list, and searchable recipe list"
+  const ProjectsList = [
+    {name: "PantryPal", status:"Group", description: pantryPalDesc, languages: ["HTML5", "CSS", "JavaScript"],  githubLink: "https://github.com/AmarjotS82/2800-202310-BBY16", liveLink: "http://woquclyvse.eu09.qoddiapp.com/" },
+    {name: "Wave Assault",status:"Group", description: "A wave shooter where you try to survive for as long as possible", languages: ["Java"],  githubLink: "https://github.com/COMP2522/project-bombpers", liveLink: "" },
+    {name: "CampusCrave",status:"Group", description: "Web application to find places to eat on the BCIT campus", languages: ["HTML5", "CSS", "JavaScript"],  githubLink: "https://github.com/AmarjotS82/1800_202230_BBY10", liveLink: "" },
+    {name: "Disney Character App",status:"Indivdual", description: "Mobile App that display API data with a clean UI\n\n.	Using data gotten from an API I was able to display the forms of media each character was in and other characters in those works ", languages: ["HTML5", "CSS", "JavaScript"],  githubLink: "", liveLink: "" },
+  ]
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+    <>
+    <Navbar />
+    <div className="px-4 py-5 my-5 text-center">
+
+      <h1 className="display-5 fw-bold " style={{color:"white"}}>Welcome!</h1>
+      <div className="col-lg-6 mx-auto">
+        <p className="lead mb-4"></p>
+      </div>
+    </div>
+
+    <div className='Container-fluid'>
+       <div  id="About" className= "row p-5">
+      <Section title={"About"} info={aboutInfo}/>
       </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div id="Projects" className = "row p-5">
+      <Section title={"Projects"} info={ProjectsList}/>
       </div>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div id="Contact" className = "row p-5">
+      <ContactForm/>
       </div>
-    </main>
+    </div>
+    </>
+    
+    
   )
 }
