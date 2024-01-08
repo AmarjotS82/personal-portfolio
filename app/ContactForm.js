@@ -42,17 +42,18 @@ export default function ContactForm(){
             setformSubmitted(false)
         }
         if (sentStatus == "sending"){
-            axios.post('https://getform.io/f/95a75398-dca9-4f05-9aa8-12b6c397c41d', { userName: name, email: email, userMessage: message })
-            .then(response => {
-                console.log('Form submitted successfully!', response);
-                setsentStatus("sent");
-                setErrorMessage("");
-            })
-            .catch(error => {
-                console.error('Error submitting form:', error);
-                setErrorMessage('Failed to submit the form. Please try again.');
-                setsentStatus("typing");
-            });
+            setsentStatus("sent");
+            // axios.post('https://getform.io/f/95a75398-dca9-4f05-9aa8-12b6c397c41d', { userName: name, email: email, userMessage: message })
+            // .then(response => {
+            //     console.log('Form submitted successfully!', response);
+            //     setsentStatus("sent");
+            //     setErrorMessage("");
+            // })
+            // .catch(error => {
+            //     console.error('Error submitting form:', error);
+            //     setErrorMessage('Failed to submit the form. Please try again.');
+            //     setsentStatus("typing");
+            // });
         }
     }, [email,message,formSubmitted, sentStatus]);
     console.log("sent status: " + sentStatus)
@@ -110,8 +111,8 @@ export default function ContactForm(){
         return(<>
            
             <h3 style={{color:"white"}}>Contact</h3>
-        
-            <form className="row g-3" onSubmit={handleFormSubmission} action='https://getform.io/f/95a75398-dca9-4f05-9aa8-12b6c397c41d' method="POST">
+            {/* action='https://getform.io/f/95a75398-dca9-4f05-9aa8-12b6c397c41d' method="POST" */}
+            <form className="row g-3" onSubmit={handleFormSubmission} netlify >
                 <div className="col-md-6">
                     <label className="form-label">Name (Optional)</label>
                     <input type="text" name="userName" className="form-control" id="name"/>
