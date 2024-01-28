@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/js/bootstrap.bundle'
 
 import styles from '/public/styles/navbar.module.css';
 
@@ -11,7 +12,7 @@ export default function Navbar() {
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="collapse navbar-collapse">
+                <div className="collapse navbar-collapse" id="navbarText">
                    
                 <ul className="navbar-nav ms-auto me-4 mb-5 mb-lg-0" >
                     <li key="About" className="nav-item">
@@ -24,9 +25,6 @@ export default function Navbar() {
                     <a className="nav-link" href="#Contact" id={styles.navbarLink}><b>Contact</b></a>
                     </li>
                 </ul>
-                {/* <span class="navbar-text">
-                    Navbar text with an inline element
-                </span> */}
                 </div>
             </div>
             </nav>
